@@ -1,1 +1,1 @@
-# News-Classifier
+# News-Classifier Application
