@@ -90,7 +90,7 @@ if page == "Home":
 elif page == "EDA":
     st.title("Exploratory Data Analysis")
     
-    # Load the training data (replace 'train.csv' with your actual data file name)
+    # Load the training data 
     train_data = pd.read_csv('train.csv')
     
     # Calculate the length of each text field
@@ -116,7 +116,7 @@ elif page == "EDA":
     plt.ylabel('Category')
     st.pyplot(plt)
 
-    # Load the test data (replace 'test.csv' with your actual test data file name)
+    # Load the test data 
     test_data = pd.read_csv('test.csv')
     
     # Plot the distribution of the category column for test data
