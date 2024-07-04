@@ -76,14 +76,41 @@ def plot_avg_length_by_category(train_data_EDA):
 models = load_models()
 vectorizer = load_vectorizer()
 
-# Sidebar with logo and navigation
 st.image("https://cdn.wan-ifra.org/wp-content/uploads/2021/06/24134841/DataSci2-scaled.jpg", use_column_width=True)
+
+# Sidebar with logo and navigation
+st.sidebar.image("https://media.istockphoto.com/id/1311148884/vector/abstract-globe-background.jpg?s=2048x2048&w=is&k=20&c=ZyHCcX0F_DVM-r_R_vG8OX_CqYLb-G16afTyaVGtB3o=", use_column_width=True)
 st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ["Home", "EDA", "Classification"])
 
+# Custom background and style
+page_bg_img = '''
+<style>
+    .stApp {
+        background-image: url("https://img.freepik.com/free-vector/vibrant-fluid-gradient-background-with-curvy-shapes_1017-32108.jpg");
+        background-size: cover;
+    }
+    .stButton>button {
+        background-color: #4CAF50;
+        color: white;
+    }
+    footer {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: right;
+        padding: 10px;
+        font-size: 12px;
+    }
+</style>
+'''
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
 # Home Page
 if page == "Home":
-    st.title("Welcome to the Text Classification App")
+    st.title("Welcome to Maji Ndogo's News24 Text Classification App")
     st.write("Use the sidebar to navigate through different sections of the app.")
 
 # EDA Page
@@ -162,3 +189,12 @@ elif page == "Classification":
                 st.error("Selected model or vectorizer could not be loaded.")
         else:
             st.write("Please enter some text for classification.")
+
+# Footer with contact details and design credit
+footer = '''
+<footer>
+    <p>Contact Us: mm2@gmail.com | Phone: 0725319083 (Call/WhatsApp)</p>
+    <p>Designed by Team@MM2</p>
+</footer>
+'''
+st.markdown(footer, unsafe_allow_html=True)
